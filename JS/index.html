@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Cách 1: Inline (viết trược tiếp trong thuộc tính) -->
+    <!-- <p onclick="this.style.color = 'red'">Bấm vào đoạn này</p> -->
+
+    <!-- Cách 2: Internal (viết trong thẻ script) -->
+    <!-- <p id="p2">Đoạn văn 2</p> -->
+
+    <!-- Cách 3: External (file .js riêng) -->
+    <!-- <p id="p3">Đoạn văn 3</p> -->
+  </body>
+
+  <script>
+    // document.getElementById("p2").onclick = function () {
+    //   this.style.color = "green";
+    // };
+    // 1. Biến và kiểu dữ liệu
+
+    // Vd1
+    // number
+    // let soLuong = 5;
+    // console.log(typeof soLuong);
+    // // string
+    // let hoTen = "Nguyễn văn a";
+    // console.log(typeof hoTen);
+    // // boolean
+    // let daHoc = true;
+    // console.log(typeof true);
+    // // undefined
+    // let ketQua;
+    // console.log(typeof ketQua);
+    // // null
+    // let khongCoGiaTri = null;
+    // console.log(typeof khongCoGiaTri);
+    // // object (array)
+    // let monHoc = ["Toan", "Văn"];
+    // console.log(typeof monHoc);
+    // // object
+    // let sinhVien = { ten: "An" };
+    // console.log(typeof sinhVien);
+
+    //number
+    //string
+    //boolen
+    //undefined
+    //null
+    //object
+    //object (array)
+
+    // let const
+
+    // vd2 let và const
+    // let diem = 8;
+    // diem = 9;
+    // console.log(diem);
+    // const pi = 3.14;
+    // // pi = 13;
+    // console.log(pi);
+
+    // vd3: Ép kiểu ngầm khi dùng dấu +
+    // let a = "5"; //string
+    // let b = 5; //number
+
+    // console.log(a + b);
+    // console.log(a - b);
+    // console.log(Number(a) + b);
+
+    // 3. Toán tử
+    // - số học (+, -, *, /, %, **)
+    // - so sánh (==, ===, !==, !===)
+    // - logic (&&, || , !)
+    // - gán (==, +==)
+
+    // vd1 Toán tử số học
+    // let a = 10;
+    // let b = 3;
+
+    // console.log("Cộng", a + b);
+    // console.log("Trừ", a - b);
+    // console.log("Nhân", a * b);
+    // console.log("Chia", a / b);
+    // console.log("Chia lấy dư", a % b); // 10/3 = 3 dư 1
+    // console.log("Lũy thừa", a ** b); // 10^3
+    // console.log(Math.floor(a / b)); //3 phần nguyên
+
+    // vd2 Toán tử so sánh
+    // console.log(5 == "5"); // chỉ so sánh giá trị
+    // console.log(5 === "5");
+    // console.log(null == undefined);
+    // console.log(null === undefined);
+
+    // vd3 Toán tử logic
+    // let tuoi = 25;
+    // let hopLe = tuoi >= 18 && tuoi < 60;
+
+    // console.log(hopLe);
+
+    // && yêu cầu tất cả đều đúng
+    // || chỉ cần 1 điều kiện đúng
+
+    // 4. Cấu trúc điều kiện
+    // if/else
+    // swich/case
+
+    // vd1 if/else
+    // let diem = 2;
+
+    // if (diem >= 8) {
+    //   console.log("Giỏi");
+    // } else if (diem >= 6) {
+    //   console.log("Khác");
+    // } else {
+    //   console.log("Yếu");
+    // }
+
+    // vd2 swich/case
+    // let thu = 10;
+    // let tenNgay;
+
+    // switch (thu) {
+    //   case 2:
+    //     tenNgay = "Thứ hai";
+    //     break;
+    //   case 3:
+    //     tenNgay = "Thứ ba";
+    //     break;
+    //   case 4:
+    //     tenNgay = "Thứ tư";
+    //     break;
+    //   case 5:
+    //     tenNgay = "Thứ năm";
+    //     break;
+    //   case 6:
+    //     tenNgay = "Thứ sáu";
+    //     break;
+    //   default:
+    //     tenNgay = "Không hợp lệ";
+    // }
+
+    // console.log(tenNgay);
+
+    // // vd3 Điều kiện lồng
+    // let usename = "admin";
+    // let password = "12345644";
+
+    // if (usename === "admin") {
+    //   if (password === "123456") {
+    //     console.log("Đăng nhập thành công");
+    //   } else {
+    //     console.log("Mật khẩu không đúng");
+    //   }
+    // } else {
+    //   console.log("Tài khoản không tồn tại");
+    // }
+
+    // 5. Vòng lặp
+    // - for
+    // - while, do...while
+
+    // for (let i = 1; i <= 5; i++) {
+    //   console.log("Số: " + i);
+    // }
+
+    // for (khởi tạo - kiều kiện - bước nhảy)
+
+    //while: kiểm tra điều kiện trước khi chạy
+    // let i = 0;
+    // while (i < 3) {
+    //   console.log("while: " + i);
+    //   i++;
+    // }
+
+    // //do...while: chạy ít nhất 1 lần rồi mới kiếm tra điều kiện
+    // let j = 0;
+    // do {
+    //   console.log("do..while: " + j);
+    //   j++;
+    // } while (j < 3);
+
+    // vd3:vòng lặp lồng nhau
+    // for (let bang = 1; bang <= 10; bang++) {
+    //   console.log("--Bảng nhân " + bang + "----");
+    //   for (let i = 1; i <= 10; i++) {
+    //     console.log(bang + "x" + i + "=" + bang + i);
+    //   }
+    // }
+  </script>
+  <!-- <script src="style.js"></script> -->
+</html>
