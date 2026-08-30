@@ -1,0 +1,94 @@
+.btn {
+  padding: 12px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background: blue;
+  /* Đổi màu khi rê chuột vào */
+}
+
+.btn:focus {
+  border: 1px solid red;
+  /* viền sáng khi được chọn bằng bàn phím */
+}
+
+.btn:active {
+  transform: scale(0.95);
+  background: #0d47a1;
+}
+/* 
+.list li:first-child {
+  color: green;
+  font-weight: bold;
+}
+
+.list li:last-child {
+  color: green;
+  font-weight: bold;
+} */
+
+/* .list li:nth-child(3n) {
+  color: green;
+  font-weight: bold;
+} */
+
+.list li:not(:first-child):not(:last-child) {
+  color: green;
+  font-weight: bold;
+}
+
+/* .intro::first-letter {
+  font-size: 2.5em;
+  color: green;
+  font-weight: bold;
+  margin-right: 8px;
+} */
+
+.intro::first-line {
+  font-size: 2.5em;
+  color: red;
+  font-weight: bold;
+}
+
+.external-link::before {
+  content: "@";
+  color: #0d47a1;
+}
+
+.download-link::after {
+  content: "$";
+  color: green;
+}
+
+.required-field::after {
+  content: "*";
+  color: red;
+}
+
+.quote {
+  position: relative;
+  padding: 0 30px;
+  font-style: italic;
+}
+
+.quote::before {
+  content: '"';
+  font-size: 3em;
+  color: #ccc;
+  position: absolute;
+  left: -5px;
+  top: -15px;
+}
+
+.quote::after {
+  content: '"';
+  font-size: 3em;
+  color: #ccc;
+  position: absolute;
+  left: 150px;
+  top: -15px;
+}
