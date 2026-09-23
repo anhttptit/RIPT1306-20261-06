@@ -1,0 +1,17 @@
+{
+  "name": "RIPT1306-06",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/anhttptit/RIPT1306-20261-06.git",
+  "author": "anhttptit <anhtt2@ptit.edu.vn>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.6",
+    "typescript": "^7.0.2"
+  }
+}
