@@ -1,0 +1,37 @@
+:root {
+  --ink: #1b1d22;
+  --soft: #646a75;
+  --line: #dfe2e7;
+  font-family: "Be Vietnam Pro", Arial, sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.page { max-width: 1080px; margin: 0 auto; padding: 32px 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: start; }
+.stage { background: #eef0f3; border-radius: 20px; padding: 24px 24px 20px; }
+.model { width: 100%; max-width: 380px; height: auto; display: block; margin: 0 auto; }
+.info { background: #fff; border-radius: 14px; padding: 12px 16px; margin-top: 12px; min-height: 96px; }
+.info h2 { margin: 0; font-size: 20px; }
+.price { font-weight: 800; margin: 2px 0; }
+.muted { color: var(--soft); margin: 4px 0 0; }
+h1 { font-size: 36px; margin: 0 0 16px; }
+
+.glasses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.glass-item { border: 2px solid var(--line); border-radius: 14px; background: #fff; padding: 12px 10px; display: grid; gap: 6px; justify-items: center; }
+.glass-item.selected { border-color: var(--ink); font-weight: 600; }
+.thumb { width: 100%; height: auto; }
+.remove { margin-top: 16px; border: 2px solid var(--ink); background: #fff; border-radius: 999px; padding: 8px 20px; }
+.remove:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.on-face { animation: put-on 0.25s ease-out; }
+@keyframes put-on { from { opacity: 0; transform: translate(80px, 145px); } to { opacity: 1; transform: translate(80px, 165px); } }
+
+@media (max-width: 760px) {
+  .page { grid-template-columns: 1fr; }
+  .glasses-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .on-face { animation: none; } }
