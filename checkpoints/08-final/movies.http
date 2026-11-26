@@ -1,0 +1,43 @@
+@base = http://localhost:3000/api
+@id = DAN_ID_VAO_DAY
+
+### 1. Danh sách (08-final: có phân trang)
+GET {{base}}/movies
+
+### 2. Tạo phim → 201, có _id, createdAt
+POST {{base}}/movies
+Content-Type: application/json
+
+{
+  "title": "  Phi hành gia cuối cùng  ",
+  "genres": ["Viễn tưởng"],
+  "duration": 141,
+  "ageRating": "T13"
+}
+
+### 3. Lấy một phim
+GET {{base}}/movies/{{id}}
+
+### 4. Cập nhật
+PUT {{base}}/movies/{{id}}
+Content-Type: application/json
+
+{ "isShowing": false }
+
+### 5. Dữ liệu sai Schema → 400 (ở 07 còn là 500, bước 11 sẽ sửa)
+POST {{base}}/movies
+Content-Type: application/json
+
+{ "title": "", "duration": 10, "ageRating": "X" }
+
+### 6. Id sai định dạng → 400 (ở 07 còn là 500)
+GET {{base}}/movies/abc
+
+### 7. Tìm kiếm + phân trang (chỉ 08-final)
+GET {{base}}/movies?q=đèn&page=1&limit=2
+
+### 8. Suất chiếu kèm thông tin phim – populate (chỉ 08-final, chạy npm run seed trước)
+GET {{base}}/showtimes
+
+### 9. Xóa → 204, gửi lần 2 → 404
+DELETE {{base}}/movies/{{id}}

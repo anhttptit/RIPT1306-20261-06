@@ -1,0 +1,37 @@
+@base = http://localhost:3000/api
+
+### 1. Kiểm tra server
+GET {{base}}/health
+
+### 2. Lấy danh sách
+GET {{base}}/movies
+
+### 3. Lọc theo thể loại
+GET {{base}}/movies?genre=Hài
+
+### 4. Lấy một phim
+GET {{base}}/movies/1
+
+### 5. Phim không tồn tại → mong đợi 404
+GET {{base}}/movies/999
+
+### 6. Tạo phim → mong đợi 201
+POST {{base}}/movies
+Content-Type: application/json
+
+{ "title": "Phi hành gia cuối cùng", "genre": "Viễn tưởng", "duration": 141 }
+
+### 7. Thiếu dữ liệu → mong đợi 400
+POST {{base}}/movies
+Content-Type: application/json
+
+{ "title": "" }
+
+### 8. Cập nhật phim id 3
+PUT {{base}}/movies/3
+Content-Type: application/json
+
+{ "duration": 150 }
+
+### 9. Xóa phim id 3 → mong đợi 204 (gửi lần 2 → 404)
+DELETE {{base}}/movies/3
